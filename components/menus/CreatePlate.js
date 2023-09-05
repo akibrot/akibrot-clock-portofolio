@@ -1,22 +1,25 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import File from "react-file-base64";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { refresh } from "../../lib/Redux/refSlice";
 import urlbackend from "../../lib/utils/BackendUrl";
 const CreateNotice = ({ selected }) => {
   const [LoginLoader, setLoginLoader] = useState(false);
   const [accountcreated, setaccountcreated] = useState(false);
   const [accountnotcreated, setaccountnotcreated] = useState(false);
   const et = ["ኢ", "ት", "E", "T"];
-
+  const sp = ["ደ", "ሕ", "S", "P"];
+  //refresh
+  const dispatch = useDispatch()
+  // const { refresh } = useSelector((state) => state.refresh)
   //data
   const [OwnerName, setOwnerName] = useState("");
   const [VehicleType, setVehicleType] = useState("");
   const [PlateCode, setPlateCode] = useState("");
   const [PlateNumber, setPlateNumber] = useState("");
   const [PlateAddress, setPlateAddress] = useState(et);
-  // setPlateAddress("ኢ", "ት", "E", "T");
-  const sn = [];
+
   const data = {
     OwnerName,
     VehicleType,
@@ -33,7 +36,7 @@ const CreateNotice = ({ selected }) => {
       .post(`${urlbackend}` + "/createplate", data)
       .then((res) => {
         setLoginLoader(false);
-
+        dispatch(refresh())
         setaccountcreated(true);
         setTimeout(() => {
           setaccountcreated(false);
@@ -49,7 +52,14 @@ const CreateNotice = ({ selected }) => {
       });
   };
   const PlateAddressAHandler = (e) => {
-    console.log(e.target.value);
+    // console.log(e.target.value);
+    if (e.target.value == "ኢ,ት,E,T") {
+      setPlateAddress(et)
+
+    }
+    else if (e.target.value == "ደ,ሕ,S,P") {
+      setPlateAddress(sp)
+    }
   };
 
   return (
@@ -62,7 +72,7 @@ const CreateNotice = ({ selected }) => {
       }
     >
       <div className="w-full py-5 flex items-center justify-center text-[#828181b0] font-bold text-xl shadow-sm center">
-        Create Plate
+        Create Plate To Be Displayed
       </div>
       <div className="flex">
         <form action="" id="createplate" onSubmit={(e) => createPlateHandler(e)}></form>
@@ -95,7 +105,7 @@ const CreateNotice = ({ selected }) => {
               type="text"
               placeholder="Plate code"
               className="bg-transparent w-full outline-none border-none text-sm"
-
+              maxLength={1}
               onChange={(e) => setPlateCode(e.target.value)}
             />
           </div>{" "}
@@ -112,12 +122,12 @@ const CreateNotice = ({ selected }) => {
           </div>{" "}
           <div className="bg-[#E4EEF2] w-[52rem] h-12 rounded flex items-center pl-3 my-2 ">
             <select
-              className="w-full mr-1 bg-transparent"
+              className="w-full mr-1 bg-transparent outline-none"
               title="Plate Address"
               onChange={(e) => PlateAddressAHandler(e)}
             >
-              {["E T ", "S P"].map((e) => {
-                return <option key={e} value={e}>{e}</option>;
+              {["ኢ,ት,E,T", "ደ,ሕ,S,P"].map((e) => {
+                return <option key={e} value={e} className="w-20">{e}</option>;
               })}
             </select>
           </div>

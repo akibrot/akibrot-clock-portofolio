@@ -2,13 +2,15 @@ import { data } from "autoprefixer";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import File from "react-file-base64";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { refresh } from "../../lib/Redux/refSlice";
 import urlbackend from "../../lib/utils/BackendUrl";
 import DisplayedGen from "./DisplayedGen";
 const DisplayedPlates = ({ selected }) => {
   //data
   const [datas, setdata] = useState([]);
-
+  const { refreshHandler } = useSelector((state) => state.refresh);
+  const dispatch = useDispatch();
   useEffect(() => {
     axios
       .get(urlbackend + "/getallplates")
@@ -16,8 +18,17 @@ const DisplayedPlates = ({ selected }) => {
         setdata(res.data);
       })
       .catch((err) => {});
-  }, []);
+  }, [refreshHandler]);
+  const deleteDisplayedhandler = (e) => {
+    // console.log(e);
 
+    axios
+      .post(urlbackend + "/deleteplate", { _id: e })
+      .then((res) => {
+        dispatch(refresh());
+      })
+      .catch((err) => {});
+  };
   return (
     <div
       className={
@@ -32,7 +43,11 @@ const DisplayedPlates = ({ selected }) => {
       <div className="flex">
         <div className=" w-full flex flex-col items-center justify-center mt-8 mx-6 ">
           {datas.map((e) => (
-            <DisplayedGen key={e._id} data={e} />
+            <DisplayedGen
+              key={e._id}
+              data={e}
+              deleteDisplayedhandler={deleteDisplayedhandler}
+            />
           ))}
         </div>
       </div>

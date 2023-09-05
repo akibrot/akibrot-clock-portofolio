@@ -4,4 +4,51 @@
 
 body {
   @apply overflow-x-hidden;
+  @apply overflow-y-hidden;
+}
+
+.animatesecond {
+  animation: rotateeversec 60s linear infinite;
+}
+@keyframes rotateeversec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animatemin {
+  animation: rotateeversec 3600s linear infinite;
+}
+@keyframes rotateeversec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.animatehour {
+  animation: rotateeversec 21600 linear infinite;
+}
+@keyframes rotateeversec {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.fadeup {
+  animation: fadeup 0.8s;
+}
+@keyframes fadeup {
+  from {
+    top: 90vh;
+  }
+  to {
+    top: 0vh;
+  }
 }
