@@ -8,7 +8,7 @@ import TechSkills from "../components/ClockMenus/TechSkills";
 import ContactMe from "../components/ClockMenus/ContactMe";
 import SocialLinks from "../components/ClockMenus/SocialLinks";
 import Head from "next/head";
-function index() {
+function Index() {
   useEffect(() => {
     AOS.init({
       duration: 1500,
@@ -151,4 +151,4 @@ function index() {
   </div>;
 }
 
-export default index;
+export default Index;
