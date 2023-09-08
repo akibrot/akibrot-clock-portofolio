@@ -8,9 +8,10 @@ body {
 }
 
 .animatesecond {
-  animation: rotateeversec 60s linear infinite;
+  animation: rotateeversecond 60s linear infinite;
 }
-@keyframes rotateeversec {
+/* 60 */
+@keyframes rotateeversecond {
   from {
     transform: rotate(0deg);
   }
@@ -18,26 +19,52 @@ body {
     transform: rotate(360deg);
   }
 }
-.animatemin {
-  animation: rotateeversec 3600s linear infinite;
+.animatemin12 {
+  animation: animatemin12 3600s linear infinite;
+  /* 3600 */
 }
-@keyframes rotateeversec {
+@keyframes animatemin12 {
   from {
-    transform: rotate(0deg);
+    transform: rotate(90deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(450deg);
   }
 }
-.animatehour {
-  animation: rotateeversec 21600 linear infinite;
+.animatemin9 {
+  animation: animatemin9 3600s linear infinite;
+  /* 3600 */
 }
-@keyframes rotateeversec {
+@keyframes animatemin9 {
   from {
-    transform: rotate(0deg);
+    transform: rotate(360deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotate(720deg);
+  }
+}
+.animatemin6 {
+  animation: animatemin6 3600s linear infinite;
+  /* 3600 */
+}
+@keyframes animatemin6 {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.animatemin3 {
+  animation: animatemin3 3600s linear infinite;
+  /* 3600 */
+}
+@keyframes animatemin3 {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
   }
 }
 
@@ -50,5 +77,162 @@ body {
   }
   to {
     top: 0vh;
+  }
+}
+/* animate hour 1 to 12 */
+.animatehour1 {
+  animation: animatehour1 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour1 {
+  from {
+    transform: rotate(120deg);
+  }
+  to {
+    transform: rotate(480deg);
+  }
+}
+.animatehour2 {
+  animation: animatehour2 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour2 {
+  from {
+    transform: rotate(150deg);
+  }
+  to {
+    transform: rotate(510deg);
+  }
+}
+.animatehour3 {
+  animation: animatehour3 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour3 {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+.animatehour4 {
+  animation: animatehour4 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour4 {
+  from {
+    transform: rotate(210deg);
+  }
+  to {
+    transform: rotate(570deg);
+  }
+}
+.animatehour5 {
+  animation: animatehour5 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour5 {
+  from {
+    transform: rotate(240deg);
+  }
+  to {
+    transform: rotate(700deg);
+  }
+}
+.animatehour6 {
+  animation: animatehour6 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour6 {
+  from {
+    transform: rotate(270deg);
+  }
+  to {
+    transform: rotate(630deg);
+  }
+}
+.animatehour7 {
+  animation: animatehour7 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour7 {
+  from {
+    transform: rotate(297deg);
+  }
+  to {
+    transform: rotate(657deg);
+  }
+}
+.animatehour8 {
+  animation: animatehour8 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour8 {
+  from {
+    transform: rotate(326deg);
+  }
+  to {
+    transform: rotate(686deg);
+  }
+}
+.animatehour9 {
+  animation: animatehour9 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour9 {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
+}
+.animatehour10 {
+  animation: animatehour10 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour10 {
+  from {
+    transform: rotate(30deg);
+  }
+  to {
+    transform: rotate(390deg);
+  }
+}
+.animatehour11 {
+  animation: animatehour11 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour11 {
+  from {
+    transform: rotate(60deg);
+  }
+  to {
+    transform: rotate(420deg);
+  }
+}
+.animatehour12 {
+  animation: animatehour12 21600s linear infinite;
+  /* 21600 */
+}
+@keyframes animatehour12 {
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(450deg);
+  }
+}
+
+.animatecheat {
+  animation: animatecheat 0.4 linear;
+}
+@keyframes animatecheat {
+  from {
+    top: -3rem;
+  }
+  to {
+    top: 2rem;
   }
 }

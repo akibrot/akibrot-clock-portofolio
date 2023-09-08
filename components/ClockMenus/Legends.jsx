@@ -26,26 +26,26 @@ export const linksDatas = [
     }, {
         id: 1,
         title: "My projects",
-        clock: "6 : 45"
+        clock: "2 : 45"
     },
     {
         id: 2,
         title: "Tech Stacks",
-        clock: "7 : 10"
+        clock: "10 : 3"
     },
     {
         id: 3,
         title: "Write Me",
-        clock: "12 : 60"
+        clock: "3 : 50"
     }, {
         id: 4,
         title: "Social Links",
-        clock: "9 : 60"
+        clock: "8 : 45"
     },
     {
         id: 5,
-        title: "Toggel Nav ",
-        clock: "9 : 60"
+        title: "Legends ",
+        clock: "9 : 30"
     },
 
 ] 
